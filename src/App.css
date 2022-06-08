@@ -25,7 +25,15 @@
 .App-link {
     color: #61dafb;
 }
-
+.v-line{
+    border-left: thick solid #61dafb;
+    height:100%;
+    left: 50%;
+    position: absolute;
+   }
+   .photo {
+    height: 200px;
+  }
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);

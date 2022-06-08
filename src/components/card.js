@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState} from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -48,8 +49,31 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function BasicCard() {
+
+
+export default function BasicCard({ mostrar }) {
+   
+    const [datos, setDatos] = useState({
+        nombre: ''
+    })
+
+    const handleInputChange = (event) => {
+        // console.log(event.target.name)
+        // console.log(event.target.value)
+        setDatos({
+            ...datos,
+            [event.target.name] : event.target.value
+        })
+    }
+
+    const enviarDatos = (event) => {
+        event.preventDefault()
+        console.log('enviando datos...' + datos.nombre + ' ' + datos.apellido)    
+    }
+    
+    
     return (
+        <form>
         <Card sx={{ minWidth: 300 }}>
             <CardContent sx={{ fontSize: 14, mb: 2, mr: 2 }}>
                 <Typography color="text.primary">
@@ -59,18 +83,35 @@ export default function BasicCard() {
                     para obtener tu orla.
                 </Typography>
 
-                <FormControl variant="standard">
-                    <InputLabel shrink htmlFor="bootstrap-input" required>
+                {/* <FormControl variant="standard">
+                    <InputLabel shrink htmlFor="bootstrap-input" required >
                         ID Alummno
                     </InputLabel>
-                    <BootstrapInput id="bootstrap-input" placeholder='ej. 602131'/>
-                </FormControl>
+                    <BootstrapInput id="bootstrap-input" placeholder='ej. 452765' />
+                </FormControl> */}
+                <label>
+    Name:
+    <input type="text" name="name" className="form-control" onChange={handleInputChange} name="nombre"/>
+  </label>
             </CardContent>
-            <CardActions style={{ justifyContent: 'right', fontSize: 14, mb: 4 }}>
-                <Button variant="contained" endIcon={<SendIcon />} sx={{ fontSize: 14, mb: 2, mr: 2 }}>
+            <CardActions style={{ justifyContent: 'right', fontSize: 14, mb: 4 }}  >
+                 {/* <Button variant="contained" endIcon={<SendIcon />}
+                    sx={{ fontSize: 14, mb: 2, mr: 2 }}  onClick={() => {
+                        mostrar(() => {
+                            return {
+                                BasicCard: false,
+                                NavBar: false,
+                                NavBarV2: true,
+                                Selector: true
+                            };
+                        })
+                    }}  type="submit">
                     Enviar
-                </Button>
+                </Button>  */}
+                <Button type="submit" variant="contained" endIcon={<SendIcon />}
+                    sx={{ fontSize: 14, mb: 2, mr: 2 }}>Enviar</Button>
             </CardActions>
         </Card>
+        </form>
     );
 }
