@@ -5,7 +5,6 @@ import NavBar from './components/navbar';
 import NavBarV2 from './components/navbarV2';
 import Selector from './components/selector';
 import { useState } from "react";
-import getAlumnos from './components/listaAlumnos'
 
 function App() {
   const [mostrar, setMostrar] = useState({

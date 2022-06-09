@@ -8,7 +8,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import FoIn from '../assets/506973.jpg';
 import Orla from '../assets/VS1PRP.jpg';
-import { getDatabase, ref, onValue, child, get } from "firebase/database";
 
 export default function Selector() {
     return (

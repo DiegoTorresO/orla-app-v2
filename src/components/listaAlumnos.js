@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+/* import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 // Follow this pattern to import other Firebase services
 // import { } from 'firebase/<service>';
@@ -24,4 +24,4 @@ async function getAlumnos(db) {
     const alumnoList = alumnoSnapshot.docs.map(doc => doc.data());
     console.log(alumnoList)
     return alumnoList;
-}
+} */
