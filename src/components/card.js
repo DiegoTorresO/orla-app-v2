@@ -37,10 +37,9 @@ export default function BasicCard({ mostrar }) {
 
     const enviarDatos = (event) => {
         event.preventDefault()
-        localStorage.setItem("alumno", datos.alumno)
+        localStorage.setItem("alumnoId", datos.alumno)
         mostrar(() => {
             return {
-                ...alumno,
                 BasicCard: false,
                 NavBar: false,
                 NavBarV2: true,
@@ -48,8 +47,9 @@ export default function BasicCard({ mostrar }) {
             };
         })
     }
-
-
+    
+      
+  window.onload = window.localStorage.clear();
     return (
         <Form onSubmit={enviarDatos}>
             <Card sx={{ minWidth: 300 }}>
@@ -62,7 +62,7 @@ export default function BasicCard({ mostrar }) {
                     </Typography>
                     <span className="p-float-label">
                         <InputText id="input" className="form-control" onChange={handleInputChange} name="alumno" />
-                        <label htmlFor="input" class="ml-4">ID de Alumno</label>
+                        <label htmlFor="input" className="ml-4">ID de Alumno</label>
                     </span>
                 </CardContent>
                 <CardActions style={{ justifyContent: 'right', fontSize: 14, mb: 4 }}>

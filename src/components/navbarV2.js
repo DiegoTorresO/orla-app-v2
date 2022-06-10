@@ -18,6 +18,7 @@ export default function NavBarV2({mostrar}) {
           <Button color="primary" variant='contained' 
           onClick={() => {
             mostrar(() => {
+                window.location.reload()
                 return {
                     BasicCard: true,
                     NavBar: true,

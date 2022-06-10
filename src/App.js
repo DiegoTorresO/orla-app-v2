@@ -3,13 +3,12 @@ import BasicCard from './components/card';
 import Footer from './components/footer';
 import NavBar from './components/navbar';
 import NavBarV2 from './components/navbarV2';
-import Selector from './components/selector';
+import Selector  from './components/selector'; 
 import { useState } from "react";
+
 
 function App() {
   const [mostrar, setMostrar] = useState({
-
-
     BasicCard: true,
     NavBar: true,
     NavBarV2: false,
