@@ -13,19 +13,12 @@ import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 
-
-
-
-
-
 export default function BasicCard({ mostrar }) {
 
     let alumno = null;
-
     const [datos, setDatos] = useState({
         alumno: ''
     })
-
     const handleInputChange = (event) => {
         // console.log(event.target.name)
         // console.log(event.target.value)
@@ -34,7 +27,6 @@ export default function BasicCard({ mostrar }) {
             [event.target.name]: event.target.value
         })
     }
-
     const enviarDatos = (event) => {
         event.preventDefault()
         localStorage.setItem("alumnoId", datos.alumno)
@@ -47,9 +39,7 @@ export default function BasicCard({ mostrar }) {
             };
         })
     }
-    
-      
-  window.onload = window.localStorage.clear();
+    window.onload = window.localStorage.clear();
     return (
         <Form onSubmit={enviarDatos}>
             <Card sx={{ minWidth: 300 }}>
@@ -65,7 +55,7 @@ export default function BasicCard({ mostrar }) {
                         <label htmlFor="input" className="ml-4">ID de Alumno</label>
                     </span>
                 </CardContent>
-                <CardActions style={{ justifyContent: 'right', fontSize: 14, mb: 4 }}>
+                <CardActions Style={{ justifyContent: 'right', fontSize: 14, mb: 4 }}>
                     <Button type="submit" variant="contained" endIcon={<SendIcon />}
                         sx={{ fontSize: 14, mb: 2, mr: 2 }}>Enviar</Button>
                 </CardActions>
@@ -74,3 +64,5 @@ export default function BasicCard({ mostrar }) {
     );
 
 }
+
+

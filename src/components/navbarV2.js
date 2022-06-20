@@ -32,3 +32,5 @@ export default function NavBarV2({mostrar}) {
     </Box>
   );
 }
+
+
